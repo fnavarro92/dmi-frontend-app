@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "fmi-frontend-app",
+  "name": "Frontend test to list Girls Shows.",
   "icons": [
     {
       "src": "favicon.ico",

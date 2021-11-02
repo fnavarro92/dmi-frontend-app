@@ -13,7 +13,7 @@ export const getAllShows = (): Promise<Show[]> => {
                 description: item.show.summary,
                 shortDescription: `${item.show.summary?.slice(0,50)}....... ${item.show.summary?.slice(-50)}`,
                 linkToReview: item.show.url,
-                score: item.score
+                score: item.show.rating?.average
             }
             return show;
         });
