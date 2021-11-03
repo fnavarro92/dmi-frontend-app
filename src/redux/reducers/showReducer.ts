@@ -6,8 +6,6 @@ export interface ShowReducerState {
 }
 
 export function setShowAction(show: Show): ShowActions {
-    console.log("set show actrion");
-    console.log(show);
     return {
         type: SET_SHOW,
         payload: show

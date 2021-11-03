@@ -13,7 +13,6 @@ const ShowList: FunctionComponent<any> = (props): ReactElement => {
 
     const obtainShows = async () => {
         const showData = await getAllShows();
-        console.log(showData);
         setShows(showData);
     }
 
@@ -29,7 +28,6 @@ const ShowList: FunctionComponent<any> = (props): ReactElement => {
                     {shows && shows.map((show) => {
                         return (
                             <Col key={show.id} lg={3}>
-                                {/* <ProductCard key={product.id} product={product} onProductAdd={onProductAdd}/> */}
                                 <ShowCard show={show} history={history}/>
                                 <br></br>
                             </Col>

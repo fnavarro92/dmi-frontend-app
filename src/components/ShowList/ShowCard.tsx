@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react"
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { Show } from "../../models/Show";
 import parse from 'html-react-parser';
 import { setShowAction } from '../../redux/reducers/showReducer';
@@ -21,7 +21,7 @@ const ShowCard: FunctionComponent<ShowCardProps> = (showCardProps: ShowCardProps
     }
     
     return (
-        <Card> 
+        <Card onClick={openShow} style={{ cursor: "pointer" }}> 
             <Card.Img variant="top" src={show.image?.medium ? show.image.medium : 'https://static.tvmaze.com/images/no-img/no-img-portrait-text.png'} />
             <Card.Body>
                 <Card.Title>
@@ -31,21 +31,17 @@ const ShowCard: FunctionComponent<ShowCardProps> = (showCardProps: ShowCardProps
                         </Row>
                     </Container>
                 </Card.Title>
-                <Card.Text>
+                <Card.Text as="div">
                     {show.description ? parse(show.shortDescription) : <p>No description available.</p> }
                 </Card.Text>
-                <Button variant="primary" onClick={openShow}>Open</Button>
             </Card.Body>
         </Card>
     )
 
 }
 
-const mapStateToProps = (state: any) => {
-}
-
 const mapDispatchToProps = {
     setShowAction: setShowAction
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowCard);
+export default connect(null, mapDispatchToProps)(ShowCard);
